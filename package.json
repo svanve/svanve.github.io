@@ -1,0 +1,14 @@
+{
+  "name": "portfolio-webspace",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch:sass": "sass --watch assets/styles/main.scss:assets/styles/main.css"
+  },
+  "author": "Silvan van Veen",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.54.1"
+  }
+}

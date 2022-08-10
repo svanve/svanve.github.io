@@ -1,0 +1,14 @@
+#footer {
+    width: 100%;
+    display: flex;
+    flex-grow: 0;
+    justify-content: center;
+    align-self: flex-end;
+    z-index: 2;
+    color: rgb(179, 179, 179);
+    font-weight: lighter;
+
+    p {
+        padding-top: 8%;
+    }
+}
