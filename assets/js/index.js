@@ -19,23 +19,22 @@ var articleId = '';
 
 ///// header text
 
-document.addEventListener('readystatechange', function(event) {
-    if (document.readyState === "complete") {
-        var typed = new Typed('#typed-result', {
-            stringsElement: '#typed-text',
-            typeSpeed: 40,
-            startDelay: 1200,
-            backSpeed: 40,
-            backDelay: 800,
-            onBegin: () => {
-                for (let key of texts) {
-                    key.style.opacity = 1;  
-                }
-            },
-            loop: true
-        });
-    }
-}); 
+
+if (document.readyState === "complete") {
+    var typed = new Typed('#typed-result', {
+        stringsElement: '#typed-text',
+        typeSpeed: 40,
+        startDelay: 1200,
+        backSpeed: 40,
+        backDelay: 800,
+        onBegin: () => {
+            for (let key of texts) {
+                key.style.opacity = 1;  
+            }
+        },
+        loop: true
+    });
+}; 
 
 
 
