@@ -1,8 +1,13 @@
 #header {
     color: white;
     width: 80%;
-    position: absolute;
+    position: relative;
     z-index: 2;
+    margin-top: 220px;
+
+    @media screen and (max-width: $medium) {
+
+    }
 }
 
 .logo {
@@ -78,6 +83,10 @@
         @media screen and (max-width: $medium) {
             font-size: $text-extra-small;
             padding-top: 1rem;
+        }
+
+        @media screen and (max-width: $small) {
+            text-align: start;
         }
     }
 }

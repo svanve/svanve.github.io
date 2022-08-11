@@ -79,7 +79,9 @@
 
 body {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   min-height: 100vh;
   color: white;
   font-family: "Roboto";
@@ -87,7 +89,7 @@ body {
 
 /* Wrapper */
 #wrapper {
-  padding: 3rem 2rem;
+  width: 100%;
   max-width: 1200px;
   display: flex;
   justify-content: center;
@@ -100,7 +102,6 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 3;
-  flex-grow: 2;
 }
 
 /* BG */
@@ -216,10 +217,10 @@ a {
 #header {
   color: white;
   width: 80%;
-  position: absolute;
+  position: relative;
   z-index: 2;
+  margin-top: 220px;
 }
-
 .logo {
   position: absolute;
   border: 1px solid white;
@@ -286,6 +287,11 @@ a {
   .inner p {
     font-size: 16px;
     padding-top: 1rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .inner p {
+    text-align: start;
   }
 }
 
@@ -577,9 +583,7 @@ article {
   z-index: 2;
   color: rgb(179, 179, 179);
   font-weight: lighter;
-}
-#footer p {
-  padding-top: 8%;
+  padding-bottom: 40px;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -7,7 +7,9 @@
 
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     min-height: 100vh;
     color: white;
     font-family: 'Roboto';
@@ -16,7 +18,7 @@ body {
 /* Wrapper */
 
 #wrapper {
-    padding: 3rem 2rem;
+    width: 100%;
     max-width: 1200px;
     display: flex;
     justify-content: center;
@@ -29,7 +31,6 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 3;
-    flex-grow: 2;
 }
 
 /* BG */
