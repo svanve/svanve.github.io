@@ -95,6 +95,8 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  min-height: 85vh;
+  margin-top: 5vh;
 }
 
 #main {
@@ -373,15 +375,10 @@ nav::before {
 article {
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 12px;
-  padding: 5%;
+  padding: 2.5rem 2rem 2.5rem 2rem;
   width: 80%;
   position: relative;
   display: none;
-}
-@media screen and (max-width: 736px) {
-  article {
-    width: 92%;
-  }
 }
 
 .close-btn {
@@ -417,7 +414,6 @@ article {
 }
 
 #work {
-  width: 100%;
   font-weight: lighter;
 }
 #work video {
@@ -517,7 +513,7 @@ article {
   margin-top: 2rem;
 }
 #contact p {
-  margin-bottom: 5%;
+  margin-bottom: 12%;
 }
 #contact ul {
   display: flex;
@@ -544,25 +540,17 @@ article {
 }
 @media screen and (max-width: 736px) {
   #contact {
-    width: 92%;
+    width: 80%;
   }
 }
 
 @media screen and (max-width: 736px) {
-  #main article {
-    padding: 3.5rem 2rem 0.5rem 2rem;
-  }
   #main article .close:before {
     top: 0.875rem;
     left: 0.875rem;
     width: 2.25rem;
     height: 2.25rem;
     background-size: 14px 14px;
-  }
-}
-@media screen and (max-width: 480px) {
-  #main article {
-    padding: 3rem 1.5rem 1.5rem 1.5rem;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -584,7 +572,7 @@ article {
   z-index: 2;
   color: rgb(179, 179, 179);
   font-weight: lighter;
-  padding-bottom: 40px;
+  height: 5vh;
 }
 
 /*# sourceMappingURL=main.css.map */

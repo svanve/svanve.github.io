@@ -1,14 +1,10 @@
 article {
     background-color: rgba(0,0,0,0.5);
     border-radius: 12px;
-    padding: 5%;
+    padding: 2.5rem 2rem 2.5rem 2rem;
     width: 80%;
     position: relative;
     display: none;
-
-    @media screen and (max-width: $medium) {
-        width: 92%;
-    }
 }
 
 .close-btn {
@@ -52,7 +48,6 @@ article {
 // Projects
 
 #work {
-    width: 100%;
     font-weight: lighter;
 
     video {
@@ -180,7 +175,7 @@ article {
     }
 
     p {
-        margin-bottom: 5%;
+        margin-bottom: 12%;
     }
 
     ul {
@@ -211,7 +206,7 @@ article {
     }
     
         @media screen and (max-width: $medium) {
-            width: 92%;
+            width: 80%;
         }
     }
 
@@ -219,24 +214,12 @@ article {
 
 @media screen and (max-width: $medium) {
 
-    #main article {
-        padding: 3.5rem 2rem 0.5rem 2rem;
-    }
-
-        #main article .close:before {
-            top: 0.875rem;
-            left: 0.875rem;
-            width: 2.25rem;
-            height: 2.25rem;
-            background-size: 14px 14px;
-        }
-
-}
-
-@media screen and (max-width: $small) {
-
-    #main article {
-        padding: 3rem 1.5rem 1.5rem 1.5rem ;
+    #main article .close:before {
+        top: 0.875rem;
+        left: 0.875rem;
+        width: 2.25rem;
+        height: 2.25rem;
+        background-size: 14px 14px;
     }
 
 }
