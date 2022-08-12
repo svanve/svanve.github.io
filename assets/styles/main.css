@@ -205,6 +205,10 @@ h2, .h2 {
   padding-bottom: 2%;
 }
 
+img, video {
+  border-radius: 8px;
+}
+
 p {
   padding-top: 2%;
 }
