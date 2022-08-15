@@ -8,7 +8,7 @@ const textsDiv = document.querySelector('#typed-text');
 const texts = textsDiv.children;
 
 
-// display typed.js texts
+///// display typed.js texts
 document.addEventListener("DOMContentLoaded", function() {
     for (let key of texts) {
         key.removeAttribute('hidden');
@@ -17,9 +17,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 var articleId = '';
 
+
 ///// header text
-
-
 var typed = new Typed('#typed-result', {
     stringsElement: '#typed-text',
     typeSpeed: 40,
@@ -37,7 +36,6 @@ var typed = new Typed('#typed-result', {
 
 
 ///// navigation 
-
 btns.forEach( (el, idx) => {
     
     // display article and hide header
@@ -74,3 +72,25 @@ function closeArticle(idx) {
     articles[idx].style.display = 'none';
 }
 
+
+///// Back to Top btn
+const backToTopBtn = document.querySelector('#back-to-top-btn');
+
+window.addEventListener( 'scroll', checkIfScrolled );
+backToTopBtn.addEventListener( 'click', scrollToTop );
+
+
+function checkIfScrolled () {
+    if (window.scrollY > 50) {
+        backToTopBtn.style.display = 'flex';
+    } else {
+        backToTopBtn.style.display = 'none';
+    }
+}
+
+function scrollToTop () {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
