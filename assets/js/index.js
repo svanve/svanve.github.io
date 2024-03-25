@@ -94,3 +94,7 @@ function scrollToTop () {
         behavior: "smooth"
     });
 }
+
+
+///// Rock, Paper, Scissor
+const signs = ['fa-hand-rock', 'fa-hand-paper', 'fa-hand-scissor'];
