@@ -97,6 +97,7 @@ body {
   flex-direction: column;
   min-height: 85vh;
   margin-top: 5vh;
+  overflow: hidden;
 }
 
 #back-to-top-btn {
