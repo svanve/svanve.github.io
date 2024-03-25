@@ -133,6 +133,7 @@ body {
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1);
+  backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   position: fixed;
   top: 0;
