@@ -109,24 +109,14 @@ let i = 0;
 logo.addEventListener('click', gameClickHandler);
 
 function gameClickHandler () {
-    logo.removeEventListener('click', gameClickHandler);
     keyboard.setAttribute('class', '');
     signSpan.style.animationPlayState = 'unset';
     signSpan.style.transform = 'rotate(45deg) translate(-40%, 0)';
     
     fistCount();
+    
     signSpan.addEventListener("animationend", () => {
         randomSign();
-        
-        //reset animation
-        signSpan.style.webkitAnimation = 'none';
-        signSpan.style.animation = 'none';
-        setTimeout(function() {
-            signSpan.style.webkitAnimation = '';
-            signSpan.style.animation = '';
-        }, 0);
-
-        logo.addEventListener('click', gameClickHandler);
     });
 }
 
@@ -136,6 +126,7 @@ function fistCount () {
 
 function randomSign () {
     let randomIdx = Math.floor(Math.random() * signs.length);
+    // animation reset by removing class "fist-animation"
     signSpan.setAttribute('class', `fas ${signs[randomIdx]}`);
     if (randomIdx === 0) {
         signSpan.style.transform = 'rotate(90deg) translate(0, 0)';
