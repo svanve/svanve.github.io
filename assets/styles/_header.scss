@@ -64,8 +64,23 @@
         text-align: center;
     }
 
-    .sign-span-scale {
-        transform: scale(0.8);
+    #sign-span {
+        transform: rotate(45deg) translate(-40%, 0);
+    }
+
+    .fist-animation {
+        -webkit-animation: fistCount .6s 2.5 cubic-bezier(.68,.17,1,.59);
+        animation: fistCount .6s 2.5 cubic-bezier(.68,.17,.88,.34);
+
+        @keyframes fistCount {
+            50% {
+                transform: rotate(90deg) translate(0%, 0);
+            }
+
+            100% {
+                transform: rotate(45deg) translate(-40%, 0);
+            }
+        }
     }
 }
 

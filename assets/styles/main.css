@@ -300,8 +300,20 @@ a {
   font-size: 25px;
   text-align: center;
 }
-.logo .sign-span-scale {
-  transform: scale(0.8);
+.logo #sign-span {
+  transform: rotate(45deg) translate(-40%, 0);
+}
+.logo .fist-animation {
+  -webkit-animation: fistCount 0.6s 2.5 cubic-bezier(0.68, 0.17, 1, 0.59);
+  animation: fistCount 0.6s 2.5 cubic-bezier(0.68, 0.17, 0.88, 0.34);
+}
+@keyframes fistCount {
+  50% {
+    transform: rotate(90deg) translate(0%, 0);
+  }
+  100% {
+    transform: rotate(45deg) translate(-40%, 0);
+  }
 }
 
 .content::before {
