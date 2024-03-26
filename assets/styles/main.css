@@ -243,6 +243,11 @@ a {
   font-style: normal;
 }
 
+/* helpers */
+.display-none {
+  display: none !important;
+}
+
 #header {
   color: white;
   width: 80%;
@@ -262,10 +267,12 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
-.logo #sign-span {
+.logo span {
   font-size: 35px;
-  transition: visibility 0.3s ease-out;
+}
+.logo #keyboard-span {
   -webkit-animation: rotation 6s infinite linear;
   animation: rotation 3.5s infinite linear;
 }
@@ -288,6 +295,13 @@ a {
   100% {
     transform: scale(1);
   }
+}
+.logo #restart-span {
+  font-size: 25px;
+  text-align: center;
+}
+.logo .sign-span-scale {
+  transform: scale(0.8);
 }
 
 .content::before {

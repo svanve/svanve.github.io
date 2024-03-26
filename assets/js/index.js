@@ -1,6 +1,7 @@
 const btns = document.querySelectorAll('nav>ul>li');
 const main = document.querySelector('#main');
 const header = document.querySelector('header');
+const logo = document.querySelector('.logo');
 const articles = document.querySelectorAll('article');
 const closeBtns = document.querySelectorAll('.close-btn');
 const background = document.querySelector('#bg');
@@ -97,4 +98,53 @@ function scrollToTop () {
 
 
 ///// Rock, Paper, Scissor
-const signs = ['fa-hand-rock', 'fa-hand-paper', 'fa-hand-scissor'];
+const gameTeaser = document.querySelector('#game-teaser');
+const keyboard = document.querySelector('#keyboard-span');
+const restartSpan = document.querySelector('#restart-span');
+const signSpan = document.querySelector("#sign-span");
+const signs = ['fa-hand-rock', 'fa-hand-paper', 'fa-hand-scissors'];
+
+let i = 0;
+
+logo.addEventListener('click', gameClickHandler);
+
+function gameClickHandler () {
+    logo.removeEventListener('click', gameClickHandler);
+    keyboard.style.animationPlayState = 'paused';
+    keyboard.setAttribute('class', '');
+    restartSpan.classList.add('display-none');
+    signSpan.textContent = '';
+    
+    nextSign();
+    i++;
+    
+    let intervalId = setInterval(() => {
+        if (i <= 2) {
+            nextSign(i);
+            i++;
+        } else if (i === 3) {
+            randomSign();
+            i++;
+        } else {
+            clearInterval(intervalId);
+            setTimeout(restartText, 1200);
+            i = 0;
+        }
+    }, 600)    
+}
+
+function randomSign () {
+    let randomIdx = Math.floor(Math.random() * signs.length);
+    signSpan.setAttribute('class', `fas ${signs[randomIdx]}`);
+}
+
+function nextSign () {
+    signSpan.setAttribute('class', `far ${signs[i]}`);
+}
+
+function restartText() {
+    signSpan.classList.add('display-none');
+    restartSpan.classList.remove('display-none');
+    restartSpan.textContent = 'Restart? Click me!';
+    logo.addEventListener('click', gameClickHandler);
+}
