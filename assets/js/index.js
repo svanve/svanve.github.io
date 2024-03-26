@@ -110,41 +110,36 @@ logo.addEventListener('click', gameClickHandler);
 
 function gameClickHandler () {
     logo.removeEventListener('click', gameClickHandler);
-    keyboard.style.animationPlayState = 'paused';
     keyboard.setAttribute('class', '');
-    restartSpan.classList.add('display-none');
-    signSpan.textContent = '';
+    signSpan.style.animationPlayState = 'unset';
+    signSpan.style.transform = 'rotate(45deg) translate(-40%, 0)';
     
-    nextSign();
-    i++;
-    
-    let intervalId = setInterval(() => {
-        if (i <= 2) {
-            nextSign(i);
-            i++;
-        } else if (i === 3) {
-            randomSign();
-            i++;
-        } else {
-            clearInterval(intervalId);
-            setTimeout(restartText, 1200);
-            i = 0;
-        }
-    }, 600)    
+    fistCount();
+    signSpan.addEventListener("animationend", () => {
+        randomSign();
+        
+        //reset animation
+        signSpan.style.webkitAnimation = 'none';
+        signSpan.style.animation = 'none';
+        setTimeout(function() {
+            signSpan.style.webkitAnimation = '';
+            signSpan.style.animation = '';
+        }, 0);
+
+        logo.addEventListener('click', gameClickHandler);
+    });
+}
+
+function fistCount () {
+    signSpan.setAttribute('class', 'far fa-hand-rock fist-animation');
 }
 
 function randomSign () {
     let randomIdx = Math.floor(Math.random() * signs.length);
     signSpan.setAttribute('class', `fas ${signs[randomIdx]}`);
-}
-
-function nextSign () {
-    signSpan.setAttribute('class', `far ${signs[i]}`);
-}
-
-function restartText() {
-    signSpan.classList.add('display-none');
-    restartSpan.classList.remove('display-none');
-    restartSpan.textContent = 'Restart? Click me!';
-    logo.addEventListener('click', gameClickHandler);
+    if (randomIdx === 0) {
+        signSpan.style.transform = 'rotate(90deg) translate(0, 0)';
+    } else {
+        signSpan.style.transform = 'rotate(0deg) translate(0px) scale(-1, 1)';
+    }
 }
